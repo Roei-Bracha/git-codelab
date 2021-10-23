@@ -165,8 +165,8 @@ Let's look at this command step by step. We are telling Git to add a remote call
 to push your code and update it on Github just write: `git push -u origin master`
 
 <!-- ------------------------ -->
-## Clone, Branches and MR
-Duration: 00:05:00
+## Clone, Branches and Marge
+Duration: 00:10:00
 
 ### 👥 The following part will be in couples 👥
 
@@ -197,7 +197,7 @@ to create a new branch use the commend:
 
 💡 `git checkout` is used to switch between branches, the `-b` flag tell git it's a new branch.
 
-now go to the readme file and change the message inside it.
+Now go to the readme file and change the message inside it.
 commit your changes as we learned before:
 - `git add readme.md`
 - `git commit -m "changing the read me"`
@@ -205,3 +205,23 @@ commit your changes as we learned before:
 to update the repository with your new changes you need to use `git push`.
 if this push will also create a new branch on the repository for the first time you should use:`git push --set-upstream origin YOUR_NEW_BRANCH_NAME`
 
+### Merge
+
+Positive
+: To avoid conflicts,. Every time before we merge we will do the following steps:
+* `git pull origin master` - Pull all the new changes to your local master.
+* `git status` - Make sure you are in your branch.
+* `git merge master` - Merge all the changes from master to your branch.
+* Fix conflicts - Use an IDE for your help
+* `git commit -m "fix conflicts"` -  Commit the conflicts fix
+* `git push` - Push your new branch to the repository
+
+Now on the the repository on github, go to the the pull request tab and press "New pull request"
+
+![create pull request ](assets/git_guide6.png)
+
+Choose the branches you want to merge:
+![create pull request ](assets/git_guide7.png)
+
+If you see the green message `Able to merge` you can create a pull request, if you don't so you probably have conflicts.
+do the steps above again and refresh the page

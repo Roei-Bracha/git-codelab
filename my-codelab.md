@@ -194,3 +194,8 @@ to create a new branch use the commend:
 
 💡 `git checkout` is used to switch between branches, the `-b` flag tell git it's a new branch.
 
+now go to the readme file and change the message inside it.
+commit your changes as we learned before:
+- `git add readme.md`
+- `git commit -m "changing the read me"`
+- `git push`

@@ -3,7 +3,7 @@
   "format": "html",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2021-10-23T08:29:36Z",
+  "updated": "2021-10-23T09:00:58Z",
   "id": "docs",
   "duration": 35,
   "title": "Git 101",
@@ -20,6 +20,6 @@
   "tags": [
     "beginner"
   ],
-  "feedback": "https://petetot.netlify.com",
+  "feedback": "mailto:roei635@gmail.com",
   "url": "docs"
 }

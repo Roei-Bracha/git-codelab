@@ -4,7 +4,7 @@ categories: Git
 tags: beginner
 status: Published 
 authors: Roei Bracha
-Feedback Link: https://petetot.netlify.com
+Feedback Link: mailto:roei635@gmail.com
 
 
 <!-- Trivia API: -->
@@ -15,6 +15,8 @@ Feedback Link: https://petetot.netlify.com
 <!-- ------------------------ -->
 ## Intro
 Duration: 00:00:00
+
+This Codelab is a part of the Git 101 lecture - [https://bit.ly/git101_slides](https://bit.ly/git101_slides)
 
 In this session we will:
 - create a GitHub account
@@ -239,3 +241,12 @@ After your partner read all the changes he can press the `Review changes` and ap
 If your PR have been approved you can marge it by clicking the `Merge pull request` button on the `Conversation` tab
 ![create pull request ](assets/git_guide9.png)
 
+<!-- ------------------------ -->
+## Summary
+Duration: 00:00:00
+
+### Congratulations 🎉
+
+You did it, you are a git wizard now 🧙‍♂️🪄
+
+If you have any questions feel free to ask.

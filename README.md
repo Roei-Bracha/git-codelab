@@ -1,7 +1,7 @@
 # A git 101 codelab
 
 Positive
-: To Enter the codelab go to [https://roei-bracha.github.io/git-codelab](https://roei-bracha.github.io/git-codelab)
+the codelab go to [https://roei-bracha.github.io/git-codelab](https://roei-bracha.github.io/git-codelab)
 
 # This repo use Claat Docker image 
 

@@ -136,9 +136,9 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Clone, Branches and MR" duration="5">
+      <google-codelab-step label="Clone, Branches and Marge" duration="10">
         <h2 is-upgraded>👥 The following part will be in couples 👥</h2>
-<p>For this step find another person in the room and ask for the link to their Repository.</p>
+<p>For this step find another person in the room and ask for the link to their Repository.<br>For now on you and you&#39;r partner will work on the same repository.</p>
 <h2 is-upgraded>Clone</h2>
 <p>now press on the green code button and under clone you will see the SSH URL for the repository.</p>
 <p class="image-container"><img alt="clone " src="img/9e8e61a25fd73776.png"></p>
@@ -147,8 +147,35 @@
 <p>This will download your friend repository to your computer, navigate inside that folder using <code>cd</code> commend.</p>
 <h2 is-upgraded>Branches</h2>
 <p>As we talked on the lecture we will never work on the master branch, so now you should create a new branch for your work.</p>
-<p>to create a new branch use the commend:<br><code>git checkout -b &lt;YOUR_NEW_BRANCH_NAME&gt;</code></p>
+<p>👥 Each partner create his own branch to the same repository.</p>
+<p>to create a new branch use the commend:<br><code>git checkout -b YOUR_NEW_BRANCH_NAME</code></p>
 <p>💡 <code>git checkout</code> is used to switch between branches, the <code>-b</code> flag tell git it&#39;s a new branch.</p>
+<p>Now go to the readme file and change the message inside it.<br>commit your changes as we learned before:</p>
+<ul>
+<li><code>git add readme.md</code></li>
+<li><code>git commit -m &#34;changing the read me&#34;</code></li>
+</ul>
+<p>to update the repository with your new changes you need to use <code>git push</code>.<br>if this push will also create a new branch on the repository for the first time you should use:<code>git push --set-upstream origin YOUR_NEW_BRANCH_NAME</code></p>
+<h2 is-upgraded>Merge</h2>
+<aside class="special"><p>To avoid conflicts,. Every time before we merge we will do the following steps:</p>
+</aside>
+<ul>
+<li><code>git pull origin master</code> - Pull all the new changes to your local master.</li>
+<li><code>git status</code> - Make sure you are in your branch.</li>
+<li><code>git merge master</code> - Merge all the changes from master to your branch.</li>
+<li>Fix conflicts - Use an IDE for your help</li>
+<li><code>git commit -m &#34;fix conflicts&#34;</code> -  Commit the conflicts fix</li>
+<li><code>git push</code> - Push your new branch to the repository</li>
+</ul>
+<p>Now on the the repository on github, go to the the pull request tab and press &#34;New pull request&#34;</p>
+<p class="image-container"><img alt="create pull request " src="img/de7323bccc3af5d2.png"></p>
+<p>Choose the branches you want to merge:<br><img alt="create pull request " src="img/46e13735c976faf8.png"></p>
+<p>If you see the green message <code>Able to merge</code> you can create a pull request, if you don&#39;t so you probably have conflicts.<br>do the steps above again and refresh the page</p>
+<h2 is-upgraded>CR - code review</h2>
+<p>before we merge the changes to the main branch we will ask our friend to check our MR (merge request) or PR (pull request).<br>in his machine he can go to the pull requests tab and see all the changes from your PR.</p>
+<p>To review your change your partner should enter the <code>File changed</code> tab and add comment if he finds something wrong.<br>After your partner read all the changes he can press the <code>Review changes</code> and approve or disapprove your PR.<br><img alt="create pull request " src="img/bef4fa5f20952644.png"></p>
+<h2 is-upgraded>Merge to master</h2>
+<p>If your PR have been approved you can marge it by clicking the <code>Merge pull request</code> button on the <code>Conversation</code> tab<br><img alt="create pull request " src="img/3158bd0fa3064529.png"></p>
 
 
       </google-codelab-step>

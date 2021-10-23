@@ -165,12 +165,13 @@ Let's look at this command step by step. We are telling Git to add a remote call
 to push your code and update it on Github just write: `git push -u origin master`
 
 <!-- ------------------------ -->
-## Clone, Branches and MR
-Duration: 00:05:00
+## Clone, Branches and Marge
+Duration: 00:10:00
 
 ### 👥 The following part will be in couples 👥
 
 For this step find another person in the room and ask for the link to their Repository.
+For now on you and you'r partner will work on the same repository.
 
 ### Clone
 
@@ -189,8 +190,52 @@ This will download your friend repository to your computer, navigate inside that
 
 As we talked on the lecture we will never work on the master branch, so now you should create a new branch for your work.
 
+👥 Each partner create his own branch to the same repository.
+
 to create a new branch use the commend:
-`git checkout -b <YOUR_NEW_BRANCH_NAME>`
+`git checkout -b YOUR_NEW_BRANCH_NAME`
 
 💡 `git checkout` is used to switch between branches, the `-b` flag tell git it's a new branch.
+
+Now go to the readme file and change the message inside it.
+commit your changes as we learned before:
+- `git add readme.md`
+- `git commit -m "changing the read me"`
+
+to update the repository with your new changes you need to use `git push`.
+if this push will also create a new branch on the repository for the first time you should use:`git push --set-upstream origin YOUR_NEW_BRANCH_NAME`
+
+### Merge
+
+Positive
+: To avoid conflicts,. Every time before we merge we will do the following steps:
+* `git pull origin master` - Pull all the new changes to your local master.
+* `git status` - Make sure you are in your branch.
+* `git merge master` - Merge all the changes from master to your branch.
+* Fix conflicts - Use an IDE for your help
+* `git commit -m "fix conflicts"` -  Commit the conflicts fix
+* `git push` - Push your new branch to the repository
+
+Now on the the repository on github, go to the the pull request tab and press "New pull request"
+
+![create pull request ](assets/git_guide6.png)
+
+Choose the branches you want to merge:
+![create pull request ](assets/git_guide7.png)
+
+If you see the green message `Able to merge` you can create a pull request, if you don't so you probably have conflicts.
+do the steps above again and refresh the page
+
+### CR - code review
+
+before we merge the changes to the main branch we will ask our friend to check our MR (merge request) or PR (pull request).
+in his machine he can go to the pull requests tab and see all the changes from your PR.
+
+To review your change your partner should enter the `File changed` tab and add comment if he finds something wrong.
+After your partner read all the changes he can press the `Review changes` and approve or disapprove your PR.
+![create pull request ](assets/git_guide8.png)
+
+### Merge to master
+If your PR have been approved you can marge it by clicking the `Merge pull request` button on the `Conversation` tab
+![create pull request ](assets/git_guide9.png)
 

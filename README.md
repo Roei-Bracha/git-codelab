@@ -1,4 +1,9 @@
-# This repo use Claat Docker image
+# A git 101 codelab
+
+Positive
+: To Enter the codelab go to [https://roei-bracha.github.io/git-codelab](https://roei-bracha.github.io/git-codelab)
+
+# This repo use Claat Docker image 
 
 > Docker image of claat tool used to generate beautiful codelabs from markdown or Google doc
 

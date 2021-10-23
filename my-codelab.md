@@ -173,7 +173,7 @@ Duration: 00:10:00
 For this step find another person in the room and ask for the link to their Repository.
 For now on you and you'r partner will work on the same repository.
 
-### Clone
+### Clone 🐑
 
 now press on the green code button and under clone you will see the SSH URL for the repository.
 
@@ -186,7 +186,7 @@ Once you have navigated to the directory where you want to put your repository, 
 
 This will download your friend repository to your computer, navigate inside that folder using `cd` commend.
 
-### Branches
+### Branches 
 
 As we talked on the lecture we will never work on the master branch, so now you should create a new branch for your work.
 
@@ -208,7 +208,7 @@ if this push will also create a new branch on the repository for the first time 
 ### Merge
 
 Positive
-: To avoid conflicts,. Every time before we merge we will do the following steps:
+: To avoid conflicts, every time before we merge we will do the following steps:
 * `git pull origin master` - Pull all the new changes to your local master.
 * `git status` - Make sure you are in your branch.
 * `git merge master` - Merge all the changes from master to your branch.

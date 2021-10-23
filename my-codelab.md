@@ -225,3 +225,17 @@ Choose the branches you want to merge:
 
 If you see the green message `Able to merge` you can create a pull request, if you don't so you probably have conflicts.
 do the steps above again and refresh the page
+
+### CR - code review
+
+before we merge the changes to the main branch we will ask our friend to check our MR (merge request) or PR (pull request).
+in his machine he can go to the pull requests tab and see all the changes from your PR.
+
+To review your change your partner should enter the `File changed` tab and add comment if he finds something wrong.
+After your partner read all the changes he can press the `Review changes` and approve or disapprove your PR.
+![create pull request ](assets/git_guide8.png)
+
+### Merge to master
+If your PR have been approved you can marge it by clicking the `Merge pull request` button on the `Conversation` tab
+![create pull request ](assets/git_guide9.png)
+

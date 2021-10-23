@@ -171,6 +171,7 @@ Duration: 00:05:00
 ### 👥 The following part will be in couples 👥
 
 For this step find another person in the room and ask for the link to their Repository.
+For now on you and you'r partner will work on the same repository.
 
 ### Clone
 
@@ -189,8 +190,10 @@ This will download your friend repository to your computer, navigate inside that
 
 As we talked on the lecture we will never work on the master branch, so now you should create a new branch for your work.
 
+👥 Each partner create his own branch to the same repository.
+
 to create a new branch use the commend:
-`git checkout -b <YOUR_NEW_BRANCH_NAME>`
+`git checkout -b YOUR_NEW_BRANCH_NAME`
 
 💡 `git checkout` is used to switch between branches, the `-b` flag tell git it's a new branch.
 
@@ -198,4 +201,7 @@ now go to the readme file and change the message inside it.
 commit your changes as we learned before:
 - `git add readme.md`
 - `git commit -m "changing the read me"`
-- `git push`
+
+to update the repository with your new changes you need to use `git push`.
+if this push will also create a new branch on the repository for the first time you should use:`git push --set-upstream origin YOUR_NEW_BRANCH_NAME`
+

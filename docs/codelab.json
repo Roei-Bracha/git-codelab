@@ -1,0 +1,25 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2021-10-23T07:56:16Z",
+  "id": "docs",
+  "duration": 30,
+  "title": "Git 101",
+  "authors": "Roei Bracha",
+  "summary": "First steps on Git",
+  "source": "my-codelab.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "git"
+  ],
+  "tags": [
+    "beginner"
+  ],
+  "feedback": "https://petetot.netlify.com",
+  "url": "docs"
+}

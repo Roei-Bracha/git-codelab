@@ -1,0 +1,164 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Git 101</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="docs"
+                  title="Git 101"
+                  environment="web"
+                  feedback-link="https://petetot.netlify.com">
+    
+      <google-codelab-step label="Intro" duration="0">
+        <p>In this session we will:</p>
+<ul>
+<li>create a GitHub account</li>
+<li>create a new repository</li>
+<li>practice commit, push and pull</li>
+<li>work on merges in pairs</li>
+</ul>
+<p class="image-container"><img alt="intro image" src="img/1d1a4473ab9bc755.png"></p>
+<p>This guide is a mix of a few tutorials with some notes from me<br>You can find the original tutorials in the links below:</p>
+<ul>
+<li><a href="https://opensource.com/article/18/1/step-step-guide-git" target="_blank">https://opensource.com/article/18/1/step-step-guide-git</a></li>
+<li><a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/testing-your-ssh-connection" target="_blank">https://docs.github.com/en/authentication/connecting-to-github-with-ssh/testing-your-ssh-connection</a></li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Create a GitHub account" duration="5">
+        <p>The easiest way to get started is to create an account on <a href="https://github.com" target="_blank">GitHub.com</a> (it&#39;s free).</p>
+<p class="image-container"><img alt="github home page" src="img/906b77df607f6131.png"></p>
+<p>Pick a username, enter your email address and a password, and click Sign up for GitHub. Once you are in, it will look something like this:</p>
+<p class="image-container"><img alt="took from " src="img/af62a0618b2f9cc.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Install git" duration="5">
+        <p>make sure you have git install on your machine<br>To make sure, open the terminal and type <code>git help</code></p>
+<p>if you get an error message download git from the sources blow:</p>
+<ul>
+<li>Windows - <a href="http://git-scm.com/download/win" target="_blank">http://git-scm.com/download/win</a></li>
+<li>Mac:<ul>
+<li>use brew with <code>brew install git</code></li>
+<li>http://git-scm.com/download/mac</li>
+</ul>
+</li>
+<li>Linux:<ul>
+<li>Debian (Ubuntu): <code>sudo apt-get install git</code></li>
+<li>Fedora: <code>sudo yum install git</code></li>
+</ul>
+</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Create and generate SSH key" duration="5">
+        <p>Using the SSH protocol, you can connect and authenticate to remote servers and services. With SSH keys, you can connect to GitHub without supplying your username and personal access token at each visit.</p>
+<p>⚠️ This part can be scary, don&#39;t panic you only need to to this once for all your projects. ⚠️<br><strong>Don&#39;t be afraid to call for help if you need some</strong></p>
+<ol type="1">
+<li>Open Git Bash on windows or Terminal on Mac/Linux.</li>
+<li>Paste the text below, substituting in your GitHub email address.<br><code>ssh-keygen -t ed25519 -C &#34;your_email@example.com&#34;</code></li>
+<li>When you&#39;re prompted to &#34;Enter a file in which to save the key press Enter. This accepts the default file location.<br><code>Enter a file in which to save the key (/c/Users/you/.ssh/id_algorithm):[Press enter]</code><br>your key location will be:<ul>
+<li>windows: <code>/c/Users/you/.ssh/</code></li>
+<li>Linux: <code>/home/you/.ssh/</code></li>
+<li>Mac: <code>/Users/you/.ssh/</code><br>Keep press Enter until it&#39;s done</li>
+</ul>
+</li>
+<li>find your public key at the key location and copy the context of the file that end with <code>.pub</code> - you can open it with notepad.<br>you can also navigate to the folder using <code>cd &lt;YOUR_PATH&gt;</code> and then <code>ls</code> to see the list of all your files and then <code>cat &lt;YOUR_FILE_NAME&gt;.pub</code> .<br><strong>make sure to copy the public - </strong><code>.pub</code><strong> file</strong></li>
+<li>Go to GitHub and in the upper-right corner of any page, click your profile photo, then click Settings.<br><img alt="settings " src="img/89bcf325d3dfcf6c.png"></li>
+<li>In the user settings sidebar, click SSH and GPG keys.<br><img alt="settings " src="img/e5476119df74f5e1.png"></li>
+<li>Click New SSH key or Add SSH key.<br><img alt="settings " src="img/56781483c008bddd.png"></li>
+<li>In the &#34;Title&#34; field, add a descriptive label for the new key. For example, if you&#39;re using a personal Mac, you might call this key &#34;Personal MacBook Air&#34;.</li>
+<li>Paste your key into the &#34;Key&#34; field.<br><img alt="settings " src="img/dce0293112736778.png"></li>
+<li>Click Add SSH key. If prompted, confirm your GitHub password.</li>
+</ol>
+<h2 is-upgraded>Testing your SSH connection</h2>
+<p>to check your SSH connection open Terminal (or git bush on windows) and write <code>ssh -T git@github.com</code></p>
+<p>You may see a warning like this:</p>
+<pre><code>&gt; The authenticity of host &#39;github.com (IP ADDRESS)&#39; can&#39;t be established.
+&gt; RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+&gt; Are you sure you want to continue connecting (yes/no)?
+</code></pre>
+<p>then type <code>yes</code> and you should see:</p>
+<pre><code> &gt; Hi username! You&#39;ve successfully authenticated, but GitHub does not provide shell access.
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Create a new repository" duration="5">
+        <p>A repository is like a place or a container where something is stored; in this case we&#39;re creating a Git repository to store code. To create a new repository, select New Repository from the + sign dropdown menu.</p>
+<p class="image-container"><img alt="new repository page " src="img/25e3d9da1a3f48f6.png"></p>
+<p>Enter a name for your repository and click Create Repository.<br>If you want you can choose if your want your repository to be private.</p>
+<p>Congratulations! You have set up your first repo on GitHub.com.</p>
+<p>Once your repo is created, it will look like this:<br><img alt="new repository page " src="img/3c6ec0b71adc2bcb.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Your first commit" duration="5">
+        <p>Open a new folder on your computer, this will be your code library for this codelab.<br>open this folder with Visual studio code (or any other IDE you like) and create a file called <code>readme.md</code> and write a nice message inside.</p>
+<p>To tell your computer that Demo is a directory managed by the Git program, enter:<br><code>git init</code></p>
+<p>Then, to tell the Git program you care about this file and want to track any changes from this point forward, enter:<br><code>git add readme.md</code></p>
+<aside class="special"><p>if you want to add all the files in the directory you can call <code>git add .</code></p>
+</aside>
+<h2 is-upgraded>Make a commit</h2>
+<p>So far you&#39;ve created a file and told Git about it, and now it&#39;s time to create a commit.<br>Commit can be thought of as a milestone. Every time you accomplish some work, you can write a Git commit to store that version of your file, so you can go back later and see what it looked like at that point in time.<br>Whenever you make a change to your file, you create a new version of that file, different from the previous one.<br>To make a commit, enter:<br><code>git commit -m &#34;first commit&#34;</code></p>
+<p>That&#39;s it! You just created a Git commit and included a message that says first commit.<br>You must always write a message in commit; it not only helps you identify a commit, but it also enables you to understand what you did with the file at that point.<br>So tomorrow, if you add a new piece of code in your file, you can write a commit message that says, Added new code, and when you come back in a month to look at your commit history or Git log (the list of commits), you will know what you changed in the files.</p>
+<h2 is-upgraded>Connect your GitHub repo with your computer</h2>
+<p>Now, it&#39;s time to connect your computer to GitHub with the command:<br><code>git remote add origin &lt;YOUR_REPO_URL&gt;</code> you can find the URL on the github page<br>for example:<br><code>git remote add origin https://github.com/&lt;your_username&gt;/Demo.git</code></p>
+<p>Let&#39;s look at this command step by step. We are telling Git to add a remote called origin with the address https://github.com//Demo.git (i.e., the URL of your Git repo on GitHub.com). This allows you to interact with your Git repository on GitHub.com by typing origin instead of the full URL and Git will know where to send your code.</p>
+<h2 is-upgraded>Push your code</h2>
+<p>to push your code and update it on Github just write: <code>git push -u origin master</code></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Clone, Branches and MR" duration="5">
+        <h2 is-upgraded>👥 The following part will be in couples 👥</h2>
+<p>For this step find another person in the room and ask for the link to their Repository.</p>
+<h2 is-upgraded>Clone</h2>
+<p>now press on the green code button and under clone you will see the SSH URL for the repository.</p>
+<p class="image-container"><img alt="clone " src="img/9e8e61a25fd73776.png"></p>
+<p>Next, on your local machine, open your bash shell and change your current working directory to the location where you would like to clone your repository. Note that here we are using a bash command - cd (change directory).</p>
+<p>Once you have navigated to the directory where you want to put your repository, you can use:<br><code>git clone git@github.com:microsoft/vscode.git</code></p>
+<p>This will download your friend repository to your computer, navigate inside that folder using <code>cd</code> commend.</p>
+<h2 is-upgraded>Branches</h2>
+<p>As we talked on the lecture we will never work on the master branch, so now you should create a new branch for your work.</p>
+<p>to create a new branch use the commend:<br><code>git checkout -b &lt;YOUR_NEW_BRANCH_NAME&gt;</code></p>
+<p>💡 <code>git checkout</code> is used to switch between branches, the <code>-b</code> flag tell git it&#39;s a new branch.</p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+
+</body>
+</html>
